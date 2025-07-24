@@ -1,20 +1,26 @@
+import Link from "next/link";
+import { gilroy } from "@/styles/fonts";
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main>
       <ul>
         <li>
-          <a href="/routing">STATIC</a>
+          <Link href="/routing">STATIC</Link>
         </li>
         <li>
-          <a href="/routing/dynamic/1234">DYNAMIC</a>
+          <Link href="/routing/dynamic/1234/">Dynamic</Link>
         </li>
         <li>
-          <a href="/routing/nested/adfg/routing">NESTED</a>
+          <Link href="/routing/nested/adfg/routing/">NESTED</Link>
         </li>
         <li>
-          <a href="/routing/catch-all-segments/1/2/3/4/5/a/b/c/d">CATCH-ALL-SEGMENTS</a>
+          <Link href="/routing/catch-all-segments/1/2/3/4/5/a/b/c/d/">
+            CATCH ALL SEGMENTS
+          </Link>
         </li>
       </ul>
     </main>
-  )
+  );
 }

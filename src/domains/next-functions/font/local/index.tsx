@@ -1,4 +1,4 @@
-import gilroy from "@/styles/fonts";
+import { gilroy } from "@/styles/fonts";
 import React, { FC } from "react";
 
 type Props = {};

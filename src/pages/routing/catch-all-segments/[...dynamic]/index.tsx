@@ -6,13 +6,15 @@ interface Params extends ParsedUrlQuery {
   dynamic: string[];
 }
 
-export const getServerSideProps : GetServerSideProps<Props, Params> = async (context) => {
+export const getServerSideProps: GetServerSideProps<Props, Params> = async (
+  context
+) => {
   return {
     props: {
       params: context.params?.dynamic, // context.params.dynamic will be an array of segments
     }, // will be passed to the page component as props
   };
-}
+};
 
 interface Props {
   params?: string[] | undefined;
@@ -24,10 +26,10 @@ const CatchAllSegments: FC<Props> = (props) => {
       CATCH-ALL-ROUTING
       <ol>
         {props.params?.map((item) => {
-          return <li>{item}</li>
+          return <li key={item}>{item}</li>;
         })}
       </ol>
     </main>
   );
-}
+};
 export default CatchAllSegments;
