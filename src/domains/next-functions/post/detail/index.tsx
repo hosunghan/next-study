@@ -1,4 +1,5 @@
 import { Post } from "@/api/post";
+import { useRouter } from "next/router";
 import { FC } from "react";
 
 interface Props {
@@ -6,6 +7,11 @@ interface Props {
 }
 
 const PostDetail: FC<Props> = ({ post }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <main>
       <h1>{post.title}</h1>

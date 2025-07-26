@@ -13,11 +13,13 @@ type Props = {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const result = await fetchPostList();
+  const sliced_post_list = result.slice(0, 3);
+  const paths = sliced_post_list.map((post) => ({
+    params: { id: post.id.toString() },
+  }));
   return {
-    paths: result.map((post) => ({
-      params: { id: post.id.toString() },
-    })),
-    fallback: false,
+    paths,
+    fallback: true,
   };
 };
 
