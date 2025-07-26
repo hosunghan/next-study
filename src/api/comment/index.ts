@@ -5,7 +5,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ErrorResponse } from "../types";
 
-interface Comment {
+export interface Comment {
   postId: number;
   id: number;
   name: string;
@@ -28,7 +28,7 @@ interface ExtendNextApiRequest extends NextApiRequest {
   };
 }
 
-interface CommentResponse {
+export interface CommentResponse {
   comments: Comment[];
 }
 
