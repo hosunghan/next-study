@@ -1,15 +1,15 @@
-import Head from "next/head";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
-const SomeComponent: FC = () => {
-  return (
-    <>
-      {/* <Head>
-        <title>TITLE TEST</title>
-      </Head> */}
-      <p>Some Component MOUNTED</p>
-    </>
-  );
+interface Props {
+  onMount: () => void;
+}
+
+const SomeComponent: FC<Props> = ({ onMount }) => {
+  useEffect(() => {
+    onMount();
+  }, [onMount]);
+
+  return <p>Some Component MOUNTED</p>;
 };
 
 export { SomeComponent };
